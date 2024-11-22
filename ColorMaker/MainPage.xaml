@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ColorMaker.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Grid x:Name="mainStack">
+        <Frame
+            x:Name="frmContainer"
+            Margin="20,0"
+            CornerRadius="10"
+            HasShadow="True"
+            VerticalOptions="Center">
+            <VerticalStackLayout Spacing="15" VerticalOptions="Center">
+                <Label
+                    Margin="0,0,0,10"
+                    HorizontalOptions="Center"
+                    Style="{StaticResource Headline}"
+                    Text="Color Maker" />
+
+                <Label
+                    HorizontalOptions="Start"
+                    Style="{StaticResource SubHeadline}"
+                    Text="Red Value:" />
+                <Slider
+                    x:Name="sldRed"
+                    MaximumTrackColor="Red"
+                    MinimumTrackColor="IndianRed"
+                    ThumbColor="Red"
+                    ValueChanged="Slider_ValueChanged" />
+
+                <Label
+                    HorizontalOptions="Start"
+                    Style="{StaticResource SubHeadline}"
+                    Text="Blue Value:" />
+                <Slider
+                    x:Name="sldBlue"
+                    MaximumTrackColor="Blue"
+                    MinimumTrackColor="CornflowerBlue"
+                    ThumbColor="Blue"
+                    ValueChanged="Slider_ValueChanged" />
+
+                <Label
+                    HorizontalOptions="Start"
+                    Style="{StaticResource SubHeadline}"
+                    Text="Green Value:" />
+                <Slider
+                    x:Name="sldGreen"
+                    MaximumTrackColor="Green"
+                    MinimumTrackColor="LightGreen"
+                    ThumbColor="Green"
+                    ValueChanged="Slider_ValueChanged" />
+
+                <Frame
+                    Margin="0,10,0,0"
+                    Padding="6"
+                    BorderColor="LightGray"
+                    CornerRadius="25"
+                    HeightRequest="50"
+                    HorizontalOptions="Center">
+                    <HorizontalStackLayout>
+                        <Label
+                            x:Name="lblHexColor"
+                            Style="{StaticResource SubHeadline}"
+                            Text="Hex Color: #000000"
+                            TextColor="Black" />
+                        <ImageButton
+                            Margin="10,0"
+                            Clicked="ImageButton_Clicked"
+                            HeightRequest="25"
+                            Source="copy.svg"
+                            WidthRequest="25" />
+                    </HorizontalStackLayout>
+                </Frame>
+
+                <Button
+                    x:Name="btnGenerateRandonColor"
+                    Margin="0,20"
+                    BorderColor="Black"
+                    BorderWidth="1"
+                    Clicked="btnGenerateRandonColor_Clicked"
+                    Text="Generate Random Color" />
+
+            </VerticalStackLayout>
+        </Frame>
+    </Grid>
+
+</ContentPage>
